@@ -80,6 +80,10 @@ class Note(models.Model):
     photo = models.ImageField(upload_to='user_images/', blank=True, null=True) # issue 4 upload photographs with associated notes by chris
     Rate = models.CharField(max_length = 8, choices=RATE_CHOICES,default = '0')
 
+    def delete_photo(self, photo):
+        if default_storage.exists(photo.name):
+            default_storage.delete(photo.name)
+
     def __str__(self):
         photo_str = self.photo.url if self.photo else 'no photo' # issue 4 upload photographs with associated notes by chris
         return f'User: {self.user} Show: {self.show} Note title: {self.title} Text: {self.text} Photo: {photo_str} Posted on: {self.posted_date} Rated at: {self.Rate}'
