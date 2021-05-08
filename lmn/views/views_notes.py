@@ -46,7 +46,6 @@ def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     return render(request, 'lmn/notes/note_detail.html' , { 'note': note })
 
-# issue 5 delete note by chris
 def delete_note(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     if note.user == request.user:
