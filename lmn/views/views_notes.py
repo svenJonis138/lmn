@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 
 from ..models import Venue, Artist, Note, Show
@@ -15,7 +16,7 @@ def new_note(request, show_pk):
 
     if request.method == 'POST':
         form = NewNoteForm(request.POST, request.FILES)
-        if form.is_valid():
+        if form.is_valid() and request.user.is_authenticated:
             note = form.save(commit=False)
             note.user = request.user
             note.show = show
@@ -24,8 +25,7 @@ def new_note(request, show_pk):
 
     else:
         form = NewNoteForm()
-
-    return render(request, 'lmn/notes/new_note.html', {'form': form, 'show': show})
+        return render(request, 'lmn/notes/new_note.html', {'show': show, 'form': form})
 
 
 """ pagination made possible by a ridiculously deep rabbit hole of docs and tutorials pagination
@@ -65,6 +65,7 @@ def notes_for_show(request, show_pk):
 def note_detail(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
     return render(request, 'lmn/notes/note_detail.html', {'note': note})
+
 
 def delete_note(request, note_pk):
     note = get_object_or_404(Note, pk=note_pk)
