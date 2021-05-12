@@ -4,7 +4,7 @@
 
 ### Unexpected Features
 - *Style is strange on add note page*
-- *Certain browsers -- depending on user -- are not displaying styles*
+- *Certain browsers -- depending on user -- are not displaying styles. If facing this issue, clear cache, or try different browser. Or live without style. You do you.*
 
 ### Future Development
 - *Match page style to Kelsey's UX design*
