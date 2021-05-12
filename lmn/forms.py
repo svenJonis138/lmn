@@ -17,11 +17,7 @@ class ArtistSearchForm(forms.Form):
 class NewNoteForm(forms.ModelForm):
     class Meta:
         model = Note
-<<<<<<< HEAD
-        fields = ('title', 'text', 'photo','Rate' ) 
-=======
-        fields = ('title', 'text', 'photo', 'rate')  # issue 4 upload photographs with associated notes by chris
->>>>>>> 7494e5f7620f2733577e7cc5773a8cebe0065de7
+        fields = ('title', 'text', 'photo', 'rate')  
 
 
 class ArtistForm(forms.ModelForm):
