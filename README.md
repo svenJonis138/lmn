@@ -7,8 +7,7 @@
 - *Certain browsers -- depending on user -- are not displaying styles. If facing this issue, clear cache, or try different browser. Or live without style. You do you.*
 
 ### Future Development
-- *Match page style to Kelsey's UX design*
-https://www.figma.com/file/XoJmT6KOsXz4tpTDKhtYed/LMN?node-id=0%3A1
+- *Match page style to Kelsey's [UX design](https://www.figma.com/file/XoJmT6KOsXz4tpTDKhtYed/LMN?node-id=0%3A1)*
 
 ### Credits
 - *Pagination made possible by a ridiculously deep rabbit hole of docs and tutorials pagination
