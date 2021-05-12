@@ -27,8 +27,8 @@ def new_note(request, show_pk):
                 note.user = request.user
                 note.show = show
                 note.save()
-                user_badge ()
-                return redirect('note_detail', note_pk=note.pk), user_note_count
+                user_badge (Note)
+                return redirect('note_detail', note_pk=note.pk)
         else:
             messages.warning(request, 'You already created a note for this show')
             form = NewNoteForm()
@@ -96,7 +96,7 @@ def note_already_exist(show_pk,user_pk):
     else:
         return False        
 
-def user_badge ():
-    user_note_count = Note.objects.count()
+def user_badge (Note):
+    user_note_count = Note.objects.all().count()
     print(user_note_count)
     
