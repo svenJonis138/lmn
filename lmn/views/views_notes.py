@@ -16,18 +16,18 @@ def new_note(request, show_pk):
     show = get_object_or_404(Show, pk=show_pk)
  
     if request.method == 'POST':
-        user_note_count = 0
         user_pk = request.user.pk
         print(user_pk)
         note_in_db = note_already_exist(show_pk,user_pk)
         if not note_in_db:
             form = NewNoteForm(request.POST, request.FILES)
+            
             if form.is_valid():
-                user_note_count += 1
                 note = form.save(commit=False)
                 note.user = request.user
                 note.show = show
                 note.save()
+                user_badge ()
                 return redirect('note_detail', note_pk=note.pk), user_note_count
         else:
             messages.warning(request, 'You already created a note for this show')
@@ -96,4 +96,7 @@ def note_already_exist(show_pk,user_pk):
     else:
         return False        
 
+def user_badge ():
+    user_note_count = Note.objects.count()
+    print(user_note_count)
     
