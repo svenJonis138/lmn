@@ -33,10 +33,9 @@ elif on windows:
   set LMNOP_USER_PW=[password]
 ```
 
-Local site at
-http://127.0.0.1:8000
-Live site at
-https://lmnop-312618.uc.r.appspot.com/
+[Local site](http://127.0.0.1:8000)
+
+[Live site](https://lmnop-312618.uc.r.appspot.com/)
 
 ### Create superuser
 
@@ -102,7 +101,7 @@ Recommend using PaaS Postgres such as Elephant, instead of installing local Post
 ### Authors
 ##### Chris Gisala - Grand Note Master
 ##### Clara James - Base Code Extraordinaire
-##### Kelsey Stiff - Supreme UX Chief
+##### Kelsey Stiff - Supreme UX and Deployment Chief
 ##### Mo Sargazi - Rating and Badge Captain
 ##### Shawn Jones - API Phreak
 ##### Topanga Gramlich - User Profile Guru
