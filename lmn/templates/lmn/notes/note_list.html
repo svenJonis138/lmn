@@ -24,7 +24,7 @@
 
     <p class='note-text'>{{ note.text|truncatechars:100 }}</p>
 
-    <p>Rating: {{ note.Rate }}</p>
+    <p>Rating: {{ note.rate }}</p>
 
     <p>
       {% if note.user.pk == request.user.pk %}
