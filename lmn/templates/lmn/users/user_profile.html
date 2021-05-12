@@ -1,5 +1,6 @@
 {% extends 'lmn/base.html' %}
 {% block content %}
+{% load static %}
 
 
 <!-- A user's profile page.
@@ -11,7 +12,6 @@ user_profile is the user that this profile is about
 user is a variable provided to the template and is the current logged-in user 
 
 -->
-
 <h2>{{ user_profile.get_full_name|default:"Unnamed Reviewer" }} ({{user_profile.username}})</h2>
 <P>Twitter Username: {{ user_profile.profile.twitter_username|default:"User is not on Twitter." }}</p>
 <P>Bio: {{ user_profile.profile.bio|default:"None" }}</p>

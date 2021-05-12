@@ -79,6 +79,7 @@ class Note(models.Model):
     text = models.TextField(max_length=1000, blank=False)
     posted_date = models.DateTimeField(auto_now_add=True, blank=False)
     photo = models.ImageField(upload_to='user_images/', blank=True, null=True)  # issue 4 upload photographs with
+    # message_count = models.Messages.objects.filter(username='username', status=0).count()
     # associated notes by chris
     Rate = models.CharField(max_length=8, choices=RATE_CHOICES, default='0')
 
